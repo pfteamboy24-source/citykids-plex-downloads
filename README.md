@@ -4,9 +4,15 @@ Windows preview downloads for Metro City Church's CityKids Plex automation app.
 
 ## Download
 
-Download the latest packaged Windows preview from the [Releases page](https://github.com/pfteamboy24-source/citykids-plex-downloads/releases/latest).
+Download the latest packaged Windows preview from the [Preview 2 release](https://github.com/pfteamboy24-source/citykids-plex-downloads/releases/tag/v0.1.0-preview.2).
 
-For Preview 1, use **CityKids-Plex-Automation-v0.1.0-preview.1-Windows-x64.zip** from the [Preview 1 release](https://github.com/pfteamboy24-source/citykids-plex-downloads/releases/tag/v0.1.0-preview.1).
+Use **CityKids-Plex-Automation-v0.1.0-preview.2-Windows-x64.zip** under the release's **Assets** section.
+
+Preview 2 fixes the control panel bookmark and Windows startup behavior:
+
+- The permanent local address is **http://127.0.0.1:8765/**. It remains valid after the app or computer restarts.
+- **Start automatically with Windows** creates and maintains a hidden current-user startup task.
+- Opening the desktop shortcut while the automation is already running reuses the existing control panel instead of starting a second copy.
 
 Do not use GitHub's automatically generated **Source code** downloads. They are not the ready-to-run Windows app.
 
@@ -19,7 +25,17 @@ Do not use GitHub's automatically generated **Source code** downloads. They are 
 5. The app opens its setup page and creates a **CityKids Plex Control** shortcut on the desktop.
 6. Keep the black app window open while the automation is running.
 
-After the first launch, use the desktop shortcut. It starts the app and opens a fresh secure local control-panel address each time.
+After the first launch, use the desktop shortcut or bookmark **http://127.0.0.1:8765/**. The local app supplies the current browser credential automatically.
+
+## Update from Preview 1
+
+1. Stop the existing CityKids automation or close its black app window.
+2. Download and extract the Preview 2 ZIP to a permanent folder.
+3. Run **Start CityKids Control Panel.cmd** from the new folder once.
+4. Confirm **Start automatically with Windows** is checked, then save the settings.
+5. Replace any old bookmark with **http://127.0.0.1:8765/**.
+
+Your folder settings and encrypted Plex token are stored separately under ProgramData, so installing Preview 2 in a new folder does not erase them. After Preview 2 has been verified, the old Preview 1 application folder can be removed.
 
 No Python, Node.js, npm, or separate FFmpeg installation is required.
 
